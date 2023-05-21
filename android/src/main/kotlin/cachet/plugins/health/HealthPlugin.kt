@@ -389,15 +389,15 @@ class HealthPlugin(private var channel: MethodChannel? = null) :
                 mResult?.success(false)
             }
         }
-        if (requestCode == HEALTH_CONNECT_RESULT_CODE) {
-            if (resultCode == Activity.RESULT_OK) {
-                Log.i("FLUTTER_HEALTH", "Access Granted (to Health Connect)!")
-                mResult?.success(true)
-            } else if (resultCode == Activity.RESULT_CANCELED) {
-                Log.i("FLUTTER_HEALTH", "Access Denied (to Health Connect)!")
-                mResult?.success(false)
-            }
-        }
+//        if (requestCode == HEALTH_CONNECT_RESULT_CODE) {
+//            if (resultCode == Activity.RESULT_OK) {
+//                Log.i("FLUTTER_HEALTH", "Access Granted (to Health Connect)!")
+//                mResult?.success(true)
+//            } else if (resultCode == Activity.RESULT_CANCELED) {
+//                Log.i("FLUTTER_HEALTH", "Access Denied (to Health Connect)!")
+//                mResult?.success(false)
+//            }
+//        }
         return false
     }
 
