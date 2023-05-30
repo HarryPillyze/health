@@ -789,9 +789,9 @@ public class SwiftHealthPlugin: NSObject, FlutterPlugin {
         workoutActivityTypeMap["FLEXIBILITY"] = .flexibility
         workoutActivityTypeMap["WALKING"] = .walking
         workoutActivityTypeMap["RUNNING"] = .running
-        workoutActivityTypeMap["RUNNING_JOGGING"] = .running // Supported due to combining with Android naming
-        workoutActivityTypeMap["RUNNING_SAND"] = .running // Supported due to combining with Android naming
-        workoutActivityTypeMap["RUNNING_TREADMILL"] = .running // Supported due to combining with Android naming
+//         workoutActivityTypeMap["RUNNING_JOGGING"] = .running // Supported due to combining with Android naming
+//         workoutActivityTypeMap["RUNNING_SAND"] = .running // Supported due to combining with Android naming
+//         workoutActivityTypeMap["RUNNING_TREADMILL"] = .running // Supported due to combining with Android naming
         workoutActivityTypeMap["WHEELCHAIR_WALK_PACE"] = .wheelchairWalkPace
         workoutActivityTypeMap["WHEELCHAIR_RUN_PACE"] = .wheelchairRunPace
         workoutActivityTypeMap["BIKING"] = .cycling
@@ -818,7 +818,7 @@ public class SwiftHealthPlugin: NSObject, FlutterPlugin {
         workoutActivityTypeMap["TABLE_TENNIS"] = .tableTennis
         workoutActivityTypeMap["TENNIS"] = .tennis
         workoutActivityTypeMap["CLIMBING"] = .climbing
-        workoutActivityTypeMap["ROCK_CLIMBING"] = .climbing // Supported due to combining with Android naming
+//         workoutActivityTypeMap["ROCK_CLIMBING"] = .climbing // Supported due to combining with Android naming
         workoutActivityTypeMap["EQUESTRIAN_SPORTS"] = .equestrianSports
         workoutActivityTypeMap["FISHING"] = .fishing
         workoutActivityTypeMap["GOLF"] = .golf
@@ -831,9 +831,9 @@ public class SwiftHealthPlugin: NSObject, FlutterPlugin {
         workoutActivityTypeMap["SNOW_SPORTS"] = .snowSports
         workoutActivityTypeMap["SNOWBOARDING"] = .snowboarding
         workoutActivityTypeMap["SKATING"] = .skatingSports
-        workoutActivityTypeMap["SKATING_CROSS,"] = .skatingSports // Supported due to combining with Android naming
-        workoutActivityTypeMap["SKATING_INDOOR,"] = .skatingSports // Supported due to combining with Android naming
-        workoutActivityTypeMap["SKATING_INLINE,"] = .skatingSports // Supported due to combining with Android naming
+//         workoutActivityTypeMap["SKATING_CROSS,"] = .skatingSports // Supported due to combining with Android naming
+//         workoutActivityTypeMap["SKATING_INDOOR,"] = .skatingSports // Supported due to combining with Android naming
+//         workoutActivityTypeMap["SKATING_INLINE,"] = .skatingSports // Supported due to combining with Android naming
         workoutActivityTypeMap["PADDLE_SPORTS"] = .paddleSports
         workoutActivityTypeMap["ROWING"] = .rowing
         workoutActivityTypeMap["SAILING"] = .sailing
