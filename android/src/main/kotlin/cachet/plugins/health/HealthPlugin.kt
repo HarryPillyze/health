@@ -405,22 +405,22 @@ class HealthPlugin(private var channel: MethodChannel? = null) :
                 mResult?.success(false)
             }
         }
-        if (requestCode == HEALTH_CONNECT_RESULT_CODE) {
-            if (resultCode == Activity.RESULT_OK) {
-                if (data != null) {
-                    if(data.extras?.containsKey("request_blocked") == true) {
-                        Log.i("FLUTTER_HEALTH", "Access Denied (to Health Connect) due to too many requests!")
-                        mResult?.success(false)
-                        return false
-                    }
-                }
-                Log.i("FLUTTER_HEALTH", "Access Granted (to Health Connect)!")
-                mResult?.success(true)
-            } else if (resultCode == Activity.RESULT_CANCELED) {
-                Log.i("FLUTTER_HEALTH", "Access Denied (to Health Connect)!")
-                mResult?.success(false)
-            }
-        }
+//        if (requestCode == HEALTH_CONNECT_RESULT_CODE) {
+//            if (resultCode == Activity.RESULT_OK) {
+//                if (data != null) {
+//                    if(data.extras?.containsKey("request_blocked") == true) {
+//                        Log.i("FLUTTER_HEALTH", "Access Denied (to Health Connect) due to too many requests!")
+//                        mResult?.success(false)
+//                        return false
+//                    }
+//                }
+//                Log.i("FLUTTER_HEALTH", "Access Granted (to Health Connect)!")
+//                mResult?.success(true)
+//            } else if (resultCode == Activity.RESULT_CANCELED) {
+//                Log.i("FLUTTER_HEALTH", "Access Denied (to Health Connect)!")
+//                mResult?.success(false)
+//            }
+//        }
         return false
     }
 
