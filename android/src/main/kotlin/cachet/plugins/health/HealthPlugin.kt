@@ -1458,7 +1458,7 @@ class HealthPlugin(private var channel: MethodChannel? = null) :
             "writeWorkoutData" -> writeWorkoutData(call, result)
             "writeBloodPressure" -> writeBloodPressure(call, result)
             "writeBloodOxygen" -> writeBloodOxygen(call, result)
-            "checkAvailability" -> checkAvailability()
+            "checkHCAvailability" -> checkHCAvailability(call, result)
             else -> result.notImplemented()
         }
     }
@@ -1504,6 +1504,12 @@ class HealthPlugin(private var channel: MethodChannel? = null) :
     fun checkAvailability() {
         healthConnectStatus = HealthConnectClient.getSdkStatus(context!!)
         healthConnectAvailable = healthConnectStatus == HealthConnectClient.SDK_AVAILABLE
+    }
+
+    fun checkHCAvailability(call: MethodCall, result: Result) {
+        healthConnectStatus = HealthConnectClient.getSdkStatus(context!!)
+        healthConnectAvailable = healthConnectStatus == HealthConnectClient.SDK_AVAILABLE
+        result.success(healthConnectAvailable)
     }
 
     fun useHealthConnectIfAvailable(call: MethodCall, result: Result) {

@@ -754,7 +754,7 @@ class HealthFactory {
     if (_platformType == PlatformType.IOS) {
       success = true;
     } else if (_platformType == PlatformType.ANDROID) {
-      success = await _channel.invokeMethod('checkAvailability');
+      success = await _channel.invokeMethod('checkHCAvailability');
     }
     return success ?? false;
   }
