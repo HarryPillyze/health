@@ -1,9 +1,27 @@
+## 8.0.0
+
+- Fixed issue [#774](https://github.com/cph-cachet/flutter-plugins/issues/774), [#779](https://github.com/cph-cachet/flutter-plugins/issues/779)
+- Merged PR [#579](https://github.com/cph-cachet/flutter-plugins/pull/579), [#717](https://github.com/cph-cachet/flutter-plugins/pull/717), [#770](https://github.com/cph-cachet/flutter-plugins/pull/770)
+- Upgraded to mavenCentral, upgraded minSDK, compilSDK, targetSDK
+- Updated health connect client to 1.1.0
+- Added respiratory rate and peripheral perfusion index to HealthConnect
+- Minor fixes to requestAuthorization, sleep stage filtering
+
+
+## 7.0.1
+
+- Updated dart doc
+
+## 7.0.0
+
+- Merged PR #722
+- Added deep, light, REM, and out of bed sleep to iOS and Android HealthConnect
+
 ## 6.0.0
 
 - Fixed issues #[694](https://github.com/cph-cachet/flutter-plugins/issues/694), #[696](https://github.com/cph-cachet/flutter-plugins/issues/696), #[697](https://github.com/cph-cachet/flutter-plugins/issues/697), #[698](https://github.com/cph-cachet/flutter-plugins/issues/698)
 - added totalSteps for HealthConnect
 - added supplemental oxygen flow rate for blood oxygen saturation on Android
-
 
 ## 5.0.0
 

@@ -22,9 +22,9 @@ Note that for Android, the target phone **needs** to have [Google Fit](https://w
 ## Data Types
 
 | **Data Type**               | **Unit**                | **iOS** | **Android (Google Fit)** | **Android (Health Connect)** | **Comments**                           |
-| --------------------------- | ----------------------- | ------- | ------------------------ | ---------------------------- | -------------------------------------- |
+| --------------------------- | ----------------------- | ------- | ------------------------ |------------------------------| -------------------------------------- |
 | ACTIVE_ENERGY_BURNED        | CALORIES                | yes     | yes                      | yes                          |                                        |
-| BASAL_ENERGY_BURNED         | CALORIES                | yes     |                          |                              |                                        |
+| BASAL_ENERGY_BURNED         | CALORIES                | yes     |                          | yes                          |                                        |
 | BLOOD_GLUCOSE               | MILLIGRAM_PER_DECILITER | yes     | yes                      | yes                          |                                        |
 | BLOOD_OXYGEN                | PERCENTAGE              | yes     | yes                      | yes                          |                                        |
 | BLOOD_PRESSURE_DIASTOLIC    | MILLIMETER_OF_MERCURY   | yes     | yes                      | yes                          |                                        |
@@ -35,19 +35,26 @@ Note that for Android, the target phone **needs** to have [Google Fit](https://w
 | ELECTRODERMAL_ACTIVITY      | SIEMENS                 | yes     |                          |                              |                                        |
 | HEART_RATE                  | BEATS_PER_MINUTE        | yes     | yes                      | yes                          |                                        |
 | HEIGHT                      | METERS                  | yes     | yes                      | yes                          |                                        |
-| RESTING_HEART_RATE          | BEATS_PER_MINUTE        | yes     |                          |                              |                                        |
+| RESTING_HEART_RATE          | BEATS_PER_MINUTE        | yes     |                          | yes                          |                                        |
+| RESPIRATORY_RATE            | RESPIRATIONS_PER_MINUTE | yes     |                          | yes                                                                   |
+| PERIPHERAL_PERFUSION_INDEX  | PERCENTAGE              | yes     |                          |                                                             |
 | STEPS                       | COUNT                   | yes     | yes                      | yes                          |                                        |
 | WAIST_CIRCUMFERENCE         | METERS                  | yes     |                          |                              |                                        |
 | WALKING_HEART_RATE          | BEATS_PER_MINUTE        | yes     |                          |                              |                                        |
 | WEIGHT                      | KILOGRAMS               | yes     | yes                      | yes                          |                                        |
 | DISTANCE_WALKING_RUNNING    | METERS                  | yes     |                          |                              |                                        |
-| FLIGHTS_CLIMBED             | COUNT                   | yes     |                          |                              |                                        |
+| FLIGHTS_CLIMBED             | COUNT                   | yes     |                          | yes                          |                                        |
 | MOVE_MINUTES                | MINUTES                 |         | yes                      |                              |                                        |
 | DISTANCE_DELTA              | METERS                  |         | yes                      | yes                          |                                        |
 | MINDFULNESS                 | MINUTES                 | yes     |                          |                              |                                        |
-| SLEEP_IN_BED                | MINUTES                 | yes     | yes                      |                              |                                        |
-| SLEEP_ASLEEP                | MINUTES                 | yes     | yes                      |                              |                                        |
-| SLEEP_AWAKE                 | MINUTES                 | yes     | yes                      |                              |                                        |
+| SLEEP_IN_BED                | MINUTES                 | yes     |                          |                              |                                        |
+| SLEEP_ASLEEP                | MINUTES                 | yes     |                          | yes                          |                                        |
+| SLEEP_AWAKE                 | MINUTES                 | yes     |                          | yes                          |                                        |
+| SLEEP_DEEP                  | MINUTES                 | yes     |                          | yes                          |                                        |
+| SLEEP_LIGHT                 | MINUTES                 |         |                          | yes                          |                                        |
+| SLEEP_REM                   | MINUTES                 | yes     |                          | yes                          |                                        |
+| SLEEP_OUT_OF_BED            | MINUTES                 |         |                          | yes                          |                                        |
+| SLEEP_SESSION               | MINUTES                 |         |                          | yes                          |                                        |
 | WATER                       | LITER                   | yes     | yes                      | yes                          |                                        |
 | EXERCISE_TIME               | MINUTES                 | yes     |                          |                              |                                        |
 | WORKOUT                     | NO_UNIT                 | yes     | yes                      | yes                          | (Has other workout types)              |
@@ -120,6 +127,9 @@ Health Connect requires the following lines in the `AndroidManifest.xml` file (a
 ```
 <queries>
     <package android:name="com.google.android.apps.healthdata" />
+        <intent>
+            <action android:name="androidx.health.ACTION_SHOW_PERMISSIONS_RATIONALE" />
+        </intent>
 </queries>
 ```
 
@@ -183,8 +193,8 @@ The Health plugin is used via the `HealthFactory` class using the different meth
 Below is a simplified flow of how to use the plugin.
 
 ```dart
-  // create a HealthFactory for use in the app
-  HealthFactory health = HealthFactory();
+  // create a HealthFactory for use in the app, choose if HealthConnect should be used or not
+  HealthFactory health = HealthFactory(useHealthConnectIfAvailable: true);
 
   // define the types to get
   var types = [
