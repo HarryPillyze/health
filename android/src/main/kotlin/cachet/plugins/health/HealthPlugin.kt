@@ -1458,6 +1458,7 @@ class HealthPlugin(private var channel: MethodChannel? = null) :
             "writeWorkoutData" -> writeWorkoutData(call, result)
             "writeBloodPressure" -> writeBloodPressure(call, result)
             "writeBloodOxygen" -> writeBloodOxygen(call, result)
+            "checkAvailability" -> checkAvailability()
             else -> result.notImplemented()
         }
     }
