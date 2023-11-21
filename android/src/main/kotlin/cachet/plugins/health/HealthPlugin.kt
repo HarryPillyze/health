@@ -1614,11 +1614,11 @@ class HealthPlugin(private var channel: MethodChannel? = null) :
                     .putExtra(Intent.EXTRA_PACKAGE_NAME, "com.pillyze.health")
             activity!!.startActivityForResult(intent,  HEALTH_CONNECT_RESULT_CODE)
         } else {
-//            val intent = Intent("androidx.health.ACTION_HEALTH_CONNECT_SETTINGS")
-//            activity!!.startActivity(intent)
-            val contract = PermissionController.createRequestPermissionResultContract()
-            val intent = contract.createIntent(activity!!, permList.toSet())
-            activity!!.startActivityForResult(intent, HEALTH_CONNECT_RESULT_CODE)
+            val intent = Intent("androidx.health.ACTION_HEALTH_CONNECT_SETTINGS")
+            activity!!.startActivityForResult(intent,  HEALTH_CONNECT_RESULT_CODE)
+//            val contract = PermissionController.createRequestPermissionResultContract()
+//            val intent = contract.createIntent(activity!!, permList.toSet())
+//            activity!!.startActivityForResult(intent, HEALTH_CONNECT_RESULT_CODE)
         }
 
         if (healthConnectRequestPermissionsLauncher == null) {
